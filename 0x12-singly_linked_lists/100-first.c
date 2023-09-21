@@ -1,20 +1,13 @@
-#include <stdlib.h>
-#include <string.h>
-#include "lists.h"
+#include <stdio.h>
+
+void printThis(void) __attribute__((constructor));
 
 /**
- * free_list - function that frees a list_t list
- * @head: Const double pointer of structure list_t for beginning
- * Return: Void
+ * printThis - this function print the following text
  */
 
-void free_list(list_t *head)
+void printThis(void)
 {
-	list_t *tem;
-
-	for (tem = head; tem != NULL; tem = tem->next)
-	{
-		free(tem->str);
-		free(tem);
-	}
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
